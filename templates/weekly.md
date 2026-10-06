@@ -53,4 +53,4 @@ No meaningful findings. Use the same finding card format if needed.
 
 ## Coverage and follow-up
 
-Link the session files used, note missing sources, and list any claims needing closer reading. Remove the example finding card and edit the zero-finding text before publishing.
+Link the session files used, note missing sources, and list any claims needing closer reading. Remove the example finding card before publishing. If no item qualifies, replace the summary and priority sections with a short `## Result` stating that no qualifying findings were identified, plus this coverage section. Never retain an item just to fill the report.

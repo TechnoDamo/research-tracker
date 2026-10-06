@@ -63,4 +63,4 @@ A short canonical reading list with one-line reasons.
 
 ## Coverage
 
-Link relevant monthly reviews and note gaps. Use session dates to determine calendar-year membership.
+Link relevant monthly reviews and note gaps. Use session dates to determine calendar-year membership. If the year has no supported material development, keep only a short result and coverage statement; remove empty rankings, reading lists, themes, and placeholder timeline rows.

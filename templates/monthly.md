@@ -47,4 +47,4 @@ Prioritized canonical links with one-line reasons. Keep short.
 
 ## Coverage
 
-Link relevant weekly reports and note material gaps. Use session dates, not week labels, to determine calendar-month membership.
+Link relevant weekly reports and note material gaps. Use session dates, not week labels, to determine calendar-month membership. If no item qualifies, keep only a short result and coverage statement; remove unused rankings, reading lists, themes, and placeholder table rows.

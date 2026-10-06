@@ -2,7 +2,7 @@
 
 A small, Git-friendly archive and static portal for following research publications and releases over time. The first topic is zero-order training; the structure supports other topics without changing the report formats.
 
-This repository is a human-readable research record. A search session records what was checked and what it found. Weekly reports assess meaningful findings. Monthly and yearly reports synthesize developments and changes in evidence. Absence of a finding is recorded explicitly; reports are never padded.
+This repository is a human-readable research record. A search session records what was checked and what it found. Weekly reports assess meaningful findings. Monthly and yearly reports synthesize developments and changes in evidence. Quiet periods get a brief, honest zero-finding record when searched; reports are never padded with weak items or generic analysis.
 
 ## Structure
 

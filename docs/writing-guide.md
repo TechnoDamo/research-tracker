@@ -8,6 +8,12 @@ The registry is a **minimum coverage checklist, not an exhaustive source list or
 
 A targeted follow-up can inspect a smaller set of sources; state its exact question and scope. In either kind of session, record every checked source, including unregistered URLs. A newly discovered source can remain in the session record; add it to `_data/sources.yml` only when recurring monitoring would add value. The registry should remain useful without pretending to enumerate the whole research landscape.
 
+### Inclusion threshold and empty periods
+
+Include an item as a finding only when original evidence shows a meaningful connection to the topic and the item could change understanding, a method choice, an evaluation plan, or a research decision. A paper matching a search term is only a candidate. Exclude weakly related, redundant, unsupported, or routine items; record the decision and reason in the search session when the item was screened. Do not lower the threshold to populate a quiet period or manufacture a trend from sparse evidence.
+
+Always keep a session record for a search that found no qualifying work. If a weekly, monthly, or yearly report is due, publish a brief report with accurate zero counts, the searched scope, links to sessions, and any coverage gaps. Remove unused finding cards, ranked lists, and theme sections instead of filling them with generic prose. State “No qualifying findings identified” only for a period actually searched; if it was not searched or coverage was incomplete, describe that limitation rather than treating silence as evidence that nothing happened.
+
 ## Files and names
 
 | File | Path and name | Purpose |
@@ -61,7 +67,7 @@ Cross-report references should use the finding ID and a relative Markdown link t
 
 ## Weekly reports
 
-Use `templates/weekly.md`. Frontmatter includes `title`, `topic`, `type`, inclusive `period_start`, exclusive `period_end`, `generated_at`, `session_files` (relative paths from the report), `findings_count`, and high/medium/low counts. Optional `retrospective`, `coverage_start`, and `coverage_end` describe a historical backfill. Counts are unique assessed findings in that report; they must match the cards. `session_files` can be empty only if the report explicitly says coverage was absent. A week without meaningful work says so and identifies the coverage limits.
+Use `templates/weekly.md`. Frontmatter includes `title`, `topic`, `type`, inclusive `period_start`, exclusive `period_end`, `generated_at`, `session_files` (relative paths from the report), `findings_count`, and high/medium/low counts. Optional `retrospective`, `coverage_start`, and `coverage_end` describe a historical backfill. Counts are unique assessed findings in that report; they must match the cards. `session_files` can be empty only if the report explicitly says coverage was absent. A week without qualifying findings says so briefly and identifies the searched scope and coverage limits; remove unused cards and priority sections.
 
 Keep the executive summary to about three to five bullets. Put cards under High, Medium, or Low according to **relevance**; rank within each section by importance. For every card include all template fields. `Authors` should reflect the original record. Use `Unknown` when a date or author cannot be verified, and explain consequential uncertainty. Contribution is one or two sentences; `Why it matters` is separate. Cite the original source for the result and describe the actual experimental or theoretical support. Do not treat an abstract, acceptance label, code link, or press summary as proof of a performance claim.
 
@@ -81,9 +87,9 @@ Use `Evidence and source quality` to state concrete facts: venue status, availab
 
 ## Monthly and yearly reports
 
-Monthly reviews select and compare the most consequential developments in the calendar month, including updates to older work. Cover methodological themes, stronger or weaker claims, what deserves deep reading, what became less important, and implications for current research. The `Full Included Findings` table links IDs to weekly assessments; it is an index, not four weeks pasted together.
+Monthly reviews select and compare the most consequential developments in the calendar month, including updates to older work. Cover methodological themes, stronger or weaker claims, what deserves deep reading, what became less important, and implications for current research. The `Full Included Findings` table links IDs to weekly assessments; it is an index, not four weeks pasted together. If nothing qualifies, use a short zero-finding synthesis and coverage statement; do not force every template section or recommend reading merely to fill space.
 
-Yearly reviews make a higher-level judgment about methods, empirical and theoretical progress, negative results, shifts in confidence, groups contributing important work, open problems, and canonical reading. Link every major conclusion to source material through finding IDs or original URLs. The timeline selects milestones rather than enumerating every item.
+Yearly reviews make a higher-level judgment about methods, empirical and theoretical progress, negative results, shifts in confidence, groups contributing important work, open problems, and canonical reading. Link every major conclusion to source material through finding IDs or original URLs. The timeline selects milestones rather than enumerating every item. If the year yields no supported material change, state that succinctly with coverage and evidence limits; omit empty rankings and timeline rows.
 
 For monthly and yearly metadata, `findings_count` is the number of distinct findings in the included-finding index or, for yearly, the distinct findings explicitly discussed or listed. Keep it honest; it is not a count of all publications in the field.
 
