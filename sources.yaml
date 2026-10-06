@@ -1,0 +1,146 @@
+# Shared source registry. See docs/writing-guide.md for field meanings.
+# Priority is a coverage obligation, not a judgment of the quality of every item.
+schema_version: 1
+sources:
+  - id: arxiv
+    name: arXiv
+    url: https://arxiv.org/search/advanced
+    priority: primary
+    type: preprint_repository
+    canonical: true
+    useful_for: New preprints, revised versions, and publication links.
+    evidence_note: Author-posted preprints; peer-review status must be checked separately.
+    topics: [zero-order-training]
+    notes: Search title and abstract using topic synonyms; inspect original and latest version dates.
+
+  - id: openreview
+    name: OpenReview
+    url: https://openreview.net/
+    priority: primary
+    type: submission_and_review_platform
+    canonical: true
+    useful_for: Conference submissions, decisions, revisions, and public reviews.
+    evidence_note: A submission is not an acceptance; verify the venue and decision on the item page.
+    topics: [zero-order-training]
+    notes: Check relevant ICLR, ICML, NeurIPS, and TMLR venues where available.
+
+  - id: neurips-proceedings
+    name: NeurIPS Proceedings
+    url: https://proceedings.neurips.cc/
+    priority: primary
+    type: conference_proceedings
+    canonical: true
+    useful_for: Published NeurIPS papers and final proceedings metadata.
+    evidence_note: Proceedings establish publication status, not independent replication.
+    topics: [zero-order-training]
+    notes: Check current proceedings and relevant earlier papers when tracing citations.
+
+  - id: icml-pmlr
+    name: ICML in PMLR
+    url: https://proceedings.mlr.press/
+    priority: primary
+    type: conference_proceedings
+    canonical: true
+    useful_for: Published ICML papers and related PMLR volumes.
+    evidence_note: Verify the volume and venue; PMLR hosts multiple conferences and workshops.
+    topics: [zero-order-training]
+    notes: Check ICML volumes specifically as well as relevant PMLR workshop volumes.
+
+  - id: iclr-openreview
+    name: ICLR on OpenReview
+    url: https://openreview.net/group?id=ICLR.cc
+    priority: primary
+    type: conference_venue
+    canonical: true
+    useful_for: ICLR submissions, decisions, accepted papers, and reviews.
+    evidence_note: Verify final decision and year; submissions have varying review status.
+    topics: [zero-order-training]
+    notes: Kept distinct from OpenReview so ICLR coverage can be checked explicitly.
+
+  - id: jmlr
+    name: Journal of Machine Learning Research
+    url: https://www.jmlr.org/papers/
+    priority: primary
+    type: journal
+    canonical: true
+    useful_for: Journal articles on optimization and learning methods.
+    evidence_note: Published journal work; inspect methods and evidence on the article itself.
+    topics: [zero-order-training]
+    notes: Include relevant theoretical and empirical work.
+
+  - id: acl-anthology
+    name: ACL Anthology
+    url: https://aclanthology.org/
+    priority: primary
+    type: proceedings_archive
+    canonical: true
+    useful_for: Language-model training and fine-tuning work in NLP venues.
+    evidence_note: Check the specific venue and paper type, including workshop status.
+    topics: [zero-order-training]
+    notes: Search when the method concerns language models or NLP training.
+
+  - id: q-labs-research
+    name: Q Labs Research
+    url: https://qlabs.sh/research
+    priority: primary
+    type: lab_research_page
+    canonical: true
+    useful_for: Direct lab research releases such as Dust.
+    evidence_note: First-party technical release; assess experimental support and independent validation separately.
+    topics: [zero-order-training]
+    notes: Include research pages even when no formal proceedings version exists.
+
+  - id: tmlr
+    name: Transactions on Machine Learning Research
+    url: https://jmlr.org/tmlr/
+    priority: secondary
+    type: journal
+    canonical: true
+    useful_for: Reviewed machine-learning methods and updates.
+    evidence_note: Check the publication record and supporting experiments.
+    topics: [zero-order-training]
+    notes: Search when following related submissions or journal versions.
+
+  - id: github
+    name: GitHub
+    url: https://github.com/
+    priority: secondary
+    type: code_host
+    canonical: true
+    useful_for: Official code, project releases, benchmarks, and replication artifacts.
+    evidence_note: Code availability supports inspectability; it does not validate claims by itself.
+    topics: [zero-order-training]
+    notes: Follow official project repositories linked from original research pages.
+
+  - id: semantic-scholar
+    name: Semantic Scholar
+    url: https://www.semanticscholar.org/
+    priority: discovery
+    type: scholarly_search
+    canonical: false
+    useful_for: Citation chasing, related work, and discovering alternate versions.
+    evidence_note: Discovery index; verify claims and metadata at the original source.
+    topics: [zero-order-training]
+    notes: Follow results to the publication or author-hosted source.
+
+  - id: general-web-search
+    name: General web search
+    url: https://www.google.com/search
+    priority: discovery
+    type: web_search
+    canonical: false
+    useful_for: Finding lab pages, institutional releases, technical reports, and project sites outside listed archives.
+    evidence_note: Search results are pointers; verify each result at its original page.
+    topics: [zero-order-training]
+    notes: Record the actual query and original destination in the session file.
+
+  - id: lab-publication-pages
+    name: Research lab publication pages
+    url: https://qlabs.sh/research
+    priority: discovery
+    type: source_class
+    canonical: false
+    useful_for: Discovering first-party releases from labs not yet explicitly registered.
+    evidence_note: Assess each lab release as first-party evidence, then register important recurring sources individually.
+    topics: [zero-order-training]
+    notes: This is a discovery category; the URL is one example, not an exhaustive directory.
