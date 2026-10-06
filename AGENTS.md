@@ -1,6 +1,6 @@
 # Research workflow for agents
 
-Read `README.md`, `docs/writing-guide.md`, the relevant `topics/<topic-id>/topic.md`, and `_data/sources.yml` before researching or writing a report.
+Read `README.md`, `docs/writing-guide.md`, the relevant `topics/<topic-id>/topic.md`, and `web/_data/sources.yml` before researching or writing a report.
 
 1. Use the registry as a **minimum coverage checklist**, not a search boundary. In a full scan, check every applicable primary source and record any skipped source with a reason. Also search beyond the registry for relevant preprints, reports, lab pages, institutional releases, code, citations, and alternate terminology. Follow discovery results to original material. Targeted follow-ups may cover fewer sources if their scope is stated.
 2. Create **one session Markdown file per search session**, even when no candidates qualify. Record registered and unregistered sources, exact queries/pages, dates, candidates, decisions, and coverage gaps. Never mark a source as checked unless it was checked.
@@ -8,4 +8,6 @@ Read `README.md`, `docs/writing-guide.md`, the relevant `topics/<topic-id>/topic
 4. Write monthly and yearly reports as fresh syntheses of the sessions, weekly assessments, and original work. Track revisions, code, replications, negative results, and changes in confidence. Never concatenate lower-level reports or invent work to fill a section.
 5. Keep metadata and counts accurate. A completed search with no qualifying findings gets a session record and, when a report is due, a short zero-finding report stating what was checked and any gaps. Omit empty finding cards and unsupported themes. An unsearched period is a coverage gap, not a zero-finding result. Use the templates and naming rules in `docs/writing-guide.md`.
 
-The static GitHub Pages interface reads the archive files directly. Keep its navigation and source list driven by Markdown frontmatter and `_data/sources.yml`; do not maintain a second list of research content in HTML. Do not add crawling, scheduling, or a database unless requested.
+The static GitHub Pages interface reads the archive files directly. Keep **all site-only pages, layouts, data, and assets in `web/`**; leave `_config.yml` at the repository root for GitHub Pages. Do not add root-level HTML or asset folders. Preserve the current public URLs through page permalinks and the CSS permalink when moving site files. Keep navigation and source lists driven by Markdown frontmatter and `web/_data/sources.yml`; do not maintain a second list of research content in HTML. Do not add crawling, scheduling, or a database unless requested.
+
+Keep the README short and easy to scan: define the project and workflow first, then show the small repository map. Avoid example-report callouts or implementation detail there. Keep the website link labelled as a placeholder until publishing. Preserve the Findings page and direct links to weekly assessment anchors; verify those links after changes to reports or site layout.

@@ -4,6 +4,8 @@ url: ""
 baseurl: "/research-tracker"
 markdown: kramdown
 permalink: pretty
+layouts_dir: web/_layouts
+data_dir: web/_data
 plugins:
   - jekyll-relative-links
 exclude:

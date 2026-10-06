@@ -13,7 +13,7 @@ flowchart LR
     C --> D[Monthly and yearly reviews<br/>synthesis and evidence changes]
 ```
 
-The [source registry](_data/sources.yml) is a minimum checklist, **not a limit on search**. Only work that materially informs the topic belongs in a report. Every search session gets its own Markdown file, even when nothing qualifies.
+The [source registry](web/_data/sources.yml) is a minimum checklist, **not a limit on search**. Only work that materially informs the topic belongs in a report. Every search session gets its own Markdown file, even when nothing qualifies.
 
 ## Inside the repository
 
@@ -21,3 +21,4 @@ The [source registry](_data/sources.yml) is a minimum checklist, **not a limit o
 - **Sessions** record every search, including quiet ones.
 - **Reports** assess weekly findings and synthesize monthly and yearly changes.
 - **Sources and templates** keep coverage and writing consistent.
+- **`web/`** holds the website pages, layout, source registry, and styling.
