@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
 <body class="{% if page.nav %}page-{{ page.nav }}{% elsif page.type %}page-{{ page.type }}{% endif %}">
+  <div class="site-backdrop" aria-hidden="true"></div>
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="{{ '/' | relative_url }}" aria-label="Research Tracker home">
