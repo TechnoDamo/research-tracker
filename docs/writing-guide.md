@@ -1,12 +1,18 @@
 # Writing and data guide
 
-This guide defines the archive contract. Keep prose readable, metadata small, and factual claims linked to original material. Do not invent findings to fill a report.
+This guide defines the archive contract. Keep prose readable, metadata small, and factual claims linked to original material. Do not invent findings to fill a report. Agents should also read the short `AGENTS.md` workflow before starting.
+
+## Research workflow
+
+The registry is a **minimum coverage checklist, not an exhaustive source list or search boundary**. A full scan checks each applicable primary source, uses secondary sources when relevant, and deliberately searches outside the registry. Search broader scholarly and general web indexes; follow citations, new terms, lab and institutional pages, project sites, and official code releases. Apply the topic's inclusion rules regardless of where an item was found. Follow discovery hits to original material before assessing a claim.
+
+A targeted follow-up can inspect a smaller set of sources; state its exact question and scope. In either kind of session, record every checked source, including unregistered URLs. A newly discovered source can remain in the session record; add it to `sources.yaml` only when recurring monitoring would add value. The registry should remain useful without pretending to enumerate the whole research landscape.
 
 ## Files and names
 
 | File | Path and name | Purpose |
 | --- | --- | --- |
-| Source registry | `sources.yaml` | Shared, structured list of places to check. |
+| Source registry | `sources.yaml` | Shared minimum coverage checklist; research may go beyond it. |
 | Topic | `topics/<topic-id>/topic.md` | Scope, vocabulary, relevance rules. |
 | Search session | `topics/<topic-id>/sessions/YYYY-MM-DDTHHMMSSZ.md` | One record for every distinct search session. Timestamp is the session start in UTC; seconds prevent collisions. |
 | Weekly | `topics/<topic-id>/reports/weekly/YYYY-Www.md` | ISO 8601 week, Monday through Sunday. |
@@ -31,19 +37,19 @@ If a scan spans midnight, name the session for its UTC start and state its actua
 | --- | --- |
 | `id` | Stable lowercase kebab-case identifier. Never silently reuse it for a different source. |
 | `name`, `url` | Human label and entry URL. Item citations should use the original item URL, not this home page. |
-| `priority` | `primary`, `secondary`, or `discovery`. Primary means explicitly check in every full scan of a listed topic; conditional sources may be skipped with a reason. Secondary means check when relevant. Discovery means use to find original material, then verify there. |
+| `priority` | `primary`, `secondary`, or `discovery`. Primary means explicitly check in every full scan of a listed topic; conditional sources may be skipped with a reason. Secondary means check when relevant. Discovery marks a starting mechanism for finding original material, not a complete list of discovery routes. |
 | `type` | Descriptive source class, such as preprint repository or proceedings. |
 | `canonical` | Whether an item hosted there can be cited as the original item record. This does **not** mean all claims are reliable. A code host is canonical for its own release, not for a paper’s publication metadata. |
 | `useful_for`, `evidence_note`, `notes` | Why to check it, how to treat evidence, and practical instructions. |
 | `topics` | Topic IDs for which the source is monitored. Add a topic ID to relevant sources when creating a topic. |
 
-The primary list includes arXiv, OpenReview, NeurIPS proceedings, ICML/PMLR, ICLR, JMLR, ACL Anthology, and Q Labs Research. In a full ZO scan, check the relevant view of each or explicitly record why a conditional source (such as ACL Anthology for non-NLP work) was not applicable. A source may be both a discovery route and a first-party record in different contexts; use the individual item’s actual provenance in the finding assessment.
+The primary list includes arXiv, OpenReview, NeurIPS proceedings, ICML/PMLR, ICLR, JMLR, ACL Anthology, and Q Labs Research. In a full ZO scan, check the relevant view of each or explicitly record why a conditional source (such as ACL Anthology for non-NLP work) was not applicable. Continue searching beyond these entries. A source may be both a discovery route and a first-party record in different contexts; use the individual item’s actual provenance in the finding assessment.
 
 ## Search session: the audit trail
 
-Create one Markdown file from `templates/session.md` for every search session, including a zero-result session. The frontmatter fields are `schema_version`, `topic`, `type: session`, `searched_at` (UTC timestamp), `status` (`complete` or `partial`), `source_ids_checked` (IDs actually checked), and `candidate_count` (number of non-placeholder candidate rows). A targeted follow-up is a session too; describe its narrower scope. The sources table records the query or page, date range, result, and coverage gaps. Do not claim a source was checked merely because it appears in the registry.
+Create one Markdown file from `templates/session.md` for every search session, including a zero-result session. The frontmatter fields are `schema_version`, `topic`, `type: session`, `searched_at` (UTC timestamp), `search_scope` (`full` or `targeted`), `status` (`complete` or `partial`), `source_ids_checked` (registered IDs actually checked), `additional_sources_checked` (URLs of unregistered sources actually checked), and `candidate_count` (number of non-placeholder candidate rows). A targeted follow-up is a session too; describe its narrower scope. The sources table records the query or page, date range, result, and coverage gaps for both registered and unregistered sources. Do not claim a source was checked merely because it appears in the registry.
 
-Capture candidate titles and original URLs even when the item is later excluded. Use `candidate`, `included`, `excluded`, or `follow_up` as decisions and explain exclusions or follow-ups. Record updates to known work separately. Link each included candidate to the stable finding ID used in reports. A session records discovery and decisions; a report contains the complete considered assessment.
+Capture candidate titles and original URLs even when the item is later excluded. Use `candidate`, `included`, `excluded`, or `follow_up` as decisions and explain exclusions or follow-ups. Record updates to known work separately. Link each included candidate to the stable finding ID used in reports. A session records discovery and decisions; a report contains the complete considered assessment. Do not omit an otherwise relevant item because its source is absent from the registry.
 
 ## Finding identity and report-only storage
 

@@ -3,8 +3,10 @@ schema_version: 1
 topic: zero-order-training
 type: session
 searched_at: 2026-10-06T12:00:00Z
+search_scope: targeted
 status: complete
-source_ids_checked: [arxiv, openreview]
+source_ids_checked: [arxiv]
+additional_sources_checked: ["https://example.org/research"]
 candidate_count: 0
 ---
 
@@ -12,14 +14,16 @@ candidate_count: 0
 
 ## Scope and method
 
-Purpose, date range searched, and any special focus. State whether this was a full source scan or a targeted follow-up.
+Purpose, date range searched, and any special focus. State whether this was a full scan or targeted follow-up. The registry is a minimum checklist, not the limit of the search: describe broader web, citation, lab-page, and synonym discovery here.
 
 ## Sources checked
 
-| Source ID | Query, venue, or page checked | Coverage/result | Notes |
+| Source ID or unregistered URL | Query, venue, or page checked | Coverage/result | Notes |
 | --- | --- | --- | --- |
 | arxiv | `example search terms` | No relevant new items | Date range and sort order |
-| openreview | `example venue or search` | Not checked | Reason; remove from `source_ids_checked` |
+| https://example.org/research | `example page or query` | Candidate found | Add URL to `additional_sources_checked` |
+
+For a full scan, list applicable primary sources that were skipped in Coverage gaps with a reason. Do not put unchecked sources in `source_ids_checked`.
 
 ## Candidates
 

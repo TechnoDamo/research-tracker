@@ -1,5 +1,7 @@
-# Shared source registry. See docs/writing-guide.md for field meanings.
-# Priority is a coverage obligation, not a judgment of the quality of every item.
+# Shared minimum coverage checklist, not an exhaustive list or search boundary.
+# Search beyond it and log newly encountered sources in each session.
+# See docs/writing-guide.md for field meanings. Priority is a coverage obligation,
+# not a judgment of the quality of every item.
 schema_version: 1
 sources:
   - id: arxiv

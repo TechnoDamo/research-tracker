@@ -12,7 +12,7 @@ findings_count: 0
 
 ## Executive Summary
 
-State the month’s most important development, strength of evidence, and whether the research direction changed. Say clearly if nothing material happened.
+State the month’s most important development, strength of evidence, and whether the research direction changed. Recheck consequential claims against original sources. Say clearly if nothing material happened.
 
 ## Top Findings of the Month
 

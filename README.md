@@ -17,12 +17,12 @@ templates/                           Copyable session and report formats
 docs/writing-guide.md                Field definitions and writing process
 ```
 
-Start with [the ZO topic](topics/zero-order-training/topic.md), [the source registry](sources.yaml), and [the writing guide](docs/writing-guide.md).
+Start with [the agent workflow](AGENTS.md), [the ZO topic](topics/zero-order-training/topic.md), [the source registry](sources.yaml), and [the writing guide](docs/writing-guide.md).
 
 ## Working sequence
 
-1. Read the topic scope and the sources assigned to it.
-2. Create a session record from `templates/session.md` for **each** search session, including sessions with no useful results. Record checked sources, queries, candidate links, and gaps.
+1. Read the topic scope and source registry. The registry is a minimum coverage checklist, **not a boundary on search**. Check relevant listed sources and actively discover work elsewhere using broader search, citations, lab pages, and new terminology.
+2. Create a session record from `templates/session.md` for **each** search session, including sessions with no useful results. Record every checked source, including unregistered ones, plus queries, candidate links, and gaps.
 3. Write a weekly report from `templates/weekly.md` after reviewing the session records and original material. Include only meaningful findings; assess importance and evidence separately.
 4. Write monthly and yearly reviews from their templates. Recheck important claims and synthesize developments instead of concatenating earlier reports.
 

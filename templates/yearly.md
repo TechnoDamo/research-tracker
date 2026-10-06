@@ -12,7 +12,7 @@ findings_count: 0
 
 ## Executive Summary
 
-The most important conclusion about progress, evidence strength, and remaining uncertainty. State if the year produced no material change.
+The most important conclusion about progress, evidence strength, and remaining uncertainty. Recheck consequential claims against original sources. State if the year produced no material change.
 
 ## Year in Review
 

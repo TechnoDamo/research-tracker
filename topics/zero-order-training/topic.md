@@ -37,6 +37,8 @@ Core terms: zeroth-order optimization, zero-order optimization, ZO training, ZO 
 
 Synonyms and variants: no-backprop training, training without backpropagation, perturbation-based learning, evolution strategies for neural network training, black-box gradient estimation. Combine broad terms with `neural network`, `transformer`, `language model`, `pretraining`, or `fine-tuning` to control noise.
 
+These terms are starting points, not an exhaustive query list. Follow citations, new terminology, and relevant work found outside `sources.yaml`; apply the inclusion and relevance rules above to every candidate.
+
 Adjacent topics: local learning rules, feedback alignment, synthetic gradients, evolution strategies, low-memory training, forward-mode automatic differentiation, hardware-constrained training, and biologically motivated learning. Include adjacent work only when it informs the core research question.
 
 ## Relevance levels

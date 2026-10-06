@@ -29,7 +29,7 @@ No meaningful findings. Replace this line with finding cards when needed.
 
 - **Authors:** Full credited names or `Unknown` with a reason.
 - **Publication/release date:** YYYY-MM-DD; use `Unknown` if unverified.
-- **Source / venue:** Name and source ID from `sources.yaml` when applicable.
+- **Source / venue:** Original host and venue; include the registry source ID when one exists. Unregistered sources are valid.
 - **Publication type:** preprint | submission | conference_paper | journal_paper | technical_report | lab_research_page | institutional_release | code_release | project_release.
 - **Canonical URL:** https://example.org/original-item
 - **Importance:** 1/5–5/5.
