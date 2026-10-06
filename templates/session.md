@@ -4,6 +4,8 @@ topic: zero-order-training
 type: session
 title: Search Session — 2026-10-06 12:00 UTC
 searched_at: 2026-10-06T12:00:00Z
+coverage_start: 2026-09-29T12:00:00Z
+coverage_end: 2026-10-06T12:00:00Z
 search_scope: targeted
 status: complete
 source_ids_checked: [arxiv]
@@ -15,13 +17,13 @@ candidate_count: 0
 
 ## Scope and method
 
-Purpose, date range searched, and any special focus. State whether this was a full scan or targeted follow-up. The registry is a minimum checklist, not the limit of the search: describe broader web, citation, lab-page, and synonym discovery here.
+Purpose, exact inclusive start and exclusive end of the search window, and any special focus. For recurring runs, add `coverage_start` and `coverage_end` UTC bounds to frontmatter and state whether every applicable source was covered. State whether this was a full scan or targeted follow-up. The registry is a minimum checklist, not the limit of the search: describe broader web, citation, lab-page, and synonym discovery here.
 
 ## Sources checked
 
 | Source ID or unregistered URL | Query, venue, or page checked | Coverage/result | Notes |
 | --- | --- | --- | --- |
-| arxiv | `example search terms` | No relevant new items | Date range and sort order |
+| arxiv | `example search terms` | No relevant new items | Exact query or URL, date filters, sort order, and pagination limits |
 | https://example.org/research | `example page or query` | Candidate found | Add URL to `additional_sources_checked` |
 
 For a full scan, list applicable primary sources that were skipped in Coverage gaps with a reason. Do not put unchecked sources in `source_ids_checked`.

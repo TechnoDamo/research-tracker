@@ -1,0 +1,5 @@
+source "https://rubygems.org"
+gem "jekyll", "3.10.0"
+gem "ffi", "1.15.5"
+gem "kramdown-parser-gfm", "1.1.0"
+gem "jekyll-relative-links", "0.6.1"

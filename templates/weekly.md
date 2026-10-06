@@ -2,7 +2,7 @@
 schema_version: 1
 topic: zero-order-training
 type: weekly
-title: Weekly Research Review — 2026-W41
+title: Weekly Research Review — 2026-W41 (Oct 5 – Oct 11)
 period_start: 2026-10-05
 period_end: 2026-10-12
 generated_at: 2026-10-12T12:00:00Z
@@ -14,7 +14,7 @@ low_priority_count: 0
 findings: []
 ---
 
-# Weekly Research Review — 2026-W41
+# Weekly Research Review — 2026-W41 (Oct 5 – Oct 11)
 
 ## Executive Summary
 
@@ -27,7 +27,7 @@ findings: []
 
 No meaningful findings. Replace this line with finding cards when needed.
 
-### zero-order-training-2026-10-06-short-slug — Finding title
+### <span id="zero-order-training-2026-10-06-short-slug"></span>[Finding title](https://example.org/original-item)
 
 - **Authors:** Full credited names or `Unknown` with a reason.
 - **Publication/release date:** YYYY-MM-DD; use `Unknown` if unverified.
@@ -54,4 +54,4 @@ No meaningful findings. Use the same finding card format if needed.
 
 ## Coverage and follow-up
 
-Link the session files used, note missing sources, and list any claims needing closer reading. For each retained card, add its `id`, verified `released_on` date, and short `title` to the frontmatter `findings` list and put `<span id="finding-id"></span>` inside its heading before the title. The website uses these to link directly to the assessment. Remove the example finding card before publishing. If no item qualifies, replace the summary and priority sections with a short `## Result` stating that no qualifying findings were identified, plus this coverage section. Never retain an item just to fill the report.
+Link the session files used, note missing sources, and list any claims needing closer reading. For each retained card, add its `id`, `released_on`, `canonical_url`, and short `title` to the frontmatter `findings` list and put `<span id="finding-id"></span>` inside its heading before the title. Use `released_on: null` plus `date_uncertainty` for an undated ongoing finding. For historical placement, require a verified release or substantive `event_on` date; otherwise leave it as a session follow-up. Keep card dates consistent with metadata. The website uses the heading anchor for direct assessment links. Remove the example finding card before publishing. If no item qualifies, replace the summary and priority sections with a short `## Result` stating that no qualifying findings were identified, plus this coverage section. Never retain an item just to fill the report.

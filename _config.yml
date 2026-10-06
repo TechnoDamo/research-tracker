@@ -1,8 +1,8 @@
 title: Research Tracker
-description: A concise, source-grounded archive of research developments.
-url: ""
+description: An open record of how research develops across chosen topics.
+url: "https://technodamo.github.io"
 baseurl: "/research-tracker"
-github_url: "https://github.com/your-username/research-tracker"
+github_url: "https://github.com/TechnoDamo/research-tracker"
 markdown: kramdown
 permalink: pretty
 layouts_dir: web/_layouts
@@ -12,8 +12,13 @@ plugins:
 exclude:
   - README.md
   - AGENTS.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
   - docs
   - templates
+  - scripts
+  - "topics/*/monitoring.yml"
 defaults:
   - scope:
       path: "topics"

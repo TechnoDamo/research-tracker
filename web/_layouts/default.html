@@ -4,29 +4,66 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ site.description | escape }}">
+  <meta name="theme-color" content="#faf8f3">
   <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
+  <link rel="icon" type="image/png" href="{{ '/web/assets/brand/favicon.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/web/assets/brand/research-tracker-logo.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
-<body>
+<body class="{% if page.nav %}page-{{ page.nav }}{% elsif page.type %}page-{{ page.type }}{% endif %}">
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="{{ '/' | relative_url }}">Research Tracker</a>
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="Research Tracker home">
+        <img src="{{ '/web/assets/brand/research-tracker-logo.png' | relative_url }}" alt="" width="48" height="48">
+        <span>Research Tracker</span>
+      </a>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="{{ '/' | relative_url }}"{% if page.nav == 'home' %} aria-current="page"{% endif %}>Overview</a>
-        <a href="{{ '/projects/' | relative_url }}"{% if page.nav == 'projects' or page.type == 'topic' %} aria-current="page"{% endif %}>Projects</a>
+        <a href="{{ '/projects/' | relative_url }}"{% if page.nav == 'projects' or page.type == 'topic' or page.type == 'weekly' or page.type == 'monthly' or page.type == 'yearly' or page.type == 'session' %} aria-current="page"{% endif %}>Projects</a>
         <a href="{{ '/sources/' | relative_url }}"{% if page.nav == 'sources' %} aria-current="page"{% endif %}>Sources</a>
       </nav>
+      <a class="header-github" href="{{ site.github_url | escape }}" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
     </header>
     <main id="main-content">
       {% if page.type == 'weekly' or page.type == 'monthly' or page.type == 'yearly' or page.type == 'session' %}
         {% assign project_path = page.topic | prepend: '/projects/' | append: '/' %}
         <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{ '/projects/' | relative_url }}">Projects</a><span aria-hidden="true">/</span><a href="{{ project_path | relative_url }}">{{ page.topic | replace: '-', ' ' | capitalize | escape }}</a><span aria-hidden="true">/</span><span>{{ page.type | capitalize }}</span></nav>
+        <div class="document-heading">
+          <div>
+            <span class="document-kind">{{ page.type | capitalize }} {% if page.retrospective %}· retrospective{% endif %}</span>
+            <h1>{{ page.title | escape }}</h1>
+          </div>
+          <img src="{{ '/web/assets/brand/research-tracker-logo.png' | relative_url }}" alt="" width="220" height="220">
+        </div>
+        {% if page.type == 'session' %}
+          <a class="session-return" data-session-return hidden href="{{ project_path | relative_url }}">← Back to report</a>
+        {% else %}
+          {% assign sessions = site.pages | where: 'type', 'session' %}
+          {% if page.session_files and page.session_files.size > 0 %}
+          <nav class="session-links" aria-label="Search sessions for this report"><span>Search record</span>
+            {% for session_file in page.session_files %}
+              {% assign session_key = session_file | split: '/' | last | remove: '.md' %}
+              {% for session in sessions %}
+                {% assign session_stem = session.name | remove: '.md' %}
+                {% if session.topic == page.topic and session_stem == session_key %}
+                  <a href="{{ session.url | relative_url }}?from={{ page.url | relative_url | url_encode }}">Inspect search session ↗</a>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </nav>
+          {% endif %}
+        {% endif %}
         <article class="document prose">{{ content }}</article>
       {% else %}
         {{ content }}
       {% endif %}
     </main>
-    <footer class="site-footer">Research Tracker</footer>
+    <footer class="site-footer">
+      <div><strong>Research Tracker</strong><span> An open research record.</span></div>
+      <div>© {{ site.time | date: '%Y' }} Damir Koblev · <a href="{{ '/rights/' | relative_url }}">Rights and licenses</a> · <a href="{{ site.github_url | escape }}" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+    </footer>
   </div>
+  <script defer src="{{ '/assets/external-links.js' | relative_url }}"></script>
+  {% if page.type == 'session' %}<script defer src="{{ '/assets/session.js' | relative_url }}"></script>{% endif %}
 </body>
 </html>

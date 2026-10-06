@@ -5,17 +5,24 @@ nav: projects
 permalink: /projects/
 ---
 {% assign projects = site.pages | where: "type", "topic" | sort: "title" %}
-<header class="page-heading">
-  <h1>Projects</h1>
-  <p>Each project has its own scope, search sessions, and reports.</p>
-</header>
+<section class="visual-banner subpage-banner" aria-labelledby="projects-title">
+  <img class="paper-field" src="{{ '/web/assets/brand/flying-papers.png' | relative_url }}" alt="" aria-hidden="true">
+  <div class="banner-copy">
+    <h1 id="projects-title">Projects</h1>
+    <p>Each project defines a research question. An AI agent documents searches and organizes worthwhile findings into weekly, monthly, and yearly reports.</p>
+  </div>
+  <img class="banner-logo" src="{{ '/web/assets/brand/research-tracker-logo.png' | relative_url }}" alt="" width="550" height="550">
+</section>
 <section class="project-list" aria-label="Research projects">
   {% for project in projects %}
   <a class="project-list-row" href="{{ project.url | relative_url }}">
-    <span><strong>{{ project.title | escape }}</strong><small>{{ project.summary | escape }}</small></span>
-    <span aria-hidden="true">↗</span>
+    <span class="project-icon-wrap">
+      {% if project.icon %}<img src="{{ project.icon | relative_url }}" alt="" width="190" height="190" loading="lazy">{% else %}<span class="blank-project-icon" aria-hidden="true"></span>{% endif %}
+    </span>
+    <span class="project-list-text"><strong>{{ project.title | escape }}</strong><small>{{ project.summary | escape }}</small></span>
+    <span class="project-list-arrow" aria-hidden="true">→</span>
   </a>
   {% else %}
-  <p>No projects have been added yet.</p>
+  <p class="empty-note">No projects have been added yet.</p>
   {% endfor %}
 </section>

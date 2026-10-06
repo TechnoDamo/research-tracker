@@ -6,6 +6,7 @@ layout: project
 title: Zero-order training and pretraining
 name: Zero-order training and pretraining
 summary: Gradient-free and backpropagation-free training of neural networks and foundation models.
+icon: /web/assets/brand/folder-icon.png
 status: active
 permalink: /projects/zero-order-training/
 ---

@@ -1,0 +1,21 @@
+schema_version: 1
+topic: zero-order-training
+status: needs_setup
+monitor_from: null
+backfill_start: null
+backfill_end: null
+weekday: null
+local_time: null
+timezone: null
+scheduler:
+  provider: null
+  task_id: null
+persistence:
+  mode: null # local, commit, push, or pull_request; agree with the human
+  remote: null
+  branch: null
+language: en
+detail: concise
+overlap_days: 7
+last_completed_end: null
+# Existing September material is a retrospective example, not an active weekly schedule.

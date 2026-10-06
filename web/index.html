@@ -4,11 +4,24 @@ title: Overview
 nav: home
 permalink: /
 ---
-<section class="overview">
-  <h1>Research Tracker</h1>
-  <p class="overview-lead">An open research record for tracking work over time and checking how the evidence changes.</p>
-  <p>Each project defines a research question. Search sessions record what was checked, including searches with no useful results. Weekly reports assess qualifying findings; monthly and yearly reports synthesize what changed. Every assessment links to the original work.</p>
-  <p>The source list is a starting checklist, not a limit on what can be found. Reports stay short when nothing meaningful qualifies.</p>
-  <a class="github-link" href="{{ site.github_url | escape }}" target="_blank" rel="noopener noreferrer">GitHub repository <span aria-hidden="true">↗</span></a>
-  <span class="link-note">Link placeholder until the repository is published.</span>
+<section class="visual-banner overview-banner" aria-labelledby="overview-title">
+  <img class="paper-field" src="{{ '/web/assets/brand/flying-papers.png' | relative_url }}" alt="" aria-hidden="true">
+  <div class="overview-copy">
+    <h1 id="overview-title">Research Tracker</h1>
+    <p class="overview-lead">An open record of how research develops across chosen topics.</p>
+    <p>Each project defines a research question. An AI agent documents its searches, assesses meaningful findings weekly, and writes monthly and yearly reviews.</p>
+    <a class="text-action" href="{{ '/projects/' | relative_url }}">View projects <span aria-hidden="true">→</span></a>
+  </div>
+  <img class="hero-logo" src="{{ '/web/assets/brand/research-tracker-logo.png' | relative_url }}" alt="A sight focused on one research paper among many" width="900" height="900">
+</section>
+
+<section class="overview-lower" aria-label="About the repository">
+  <div class="overview-intro">
+    <p>Open source and self-hostable. Define your own topics in Markdown; setup details are in the <a href="{{ site.github_url | escape }}" target="_blank" rel="noopener noreferrer">repository ↗</a>.</p>
+    <p class="small-note">The source registry is a starting checklist. Searches can include relevant work found elsewhere, and quiet periods stay brief.</p>
+  </div>
+  <div class="overview-links">
+    <a href="{{ '/projects/' | relative_url }}"><span class="mini-document" aria-hidden="true"></span><span><strong>Projects</strong><small>Browse research questions and reports.</small></span><span class="row-arrow" aria-hidden="true">→</span></a>
+    <a href="{{ '/sources/' | relative_url }}"><span class="mini-document" aria-hidden="true"></span><span><strong>Sources</strong><small>See the minimum coverage checklist.</small></span><span class="row-arrow" aria-hidden="true">→</span></a>
+  </div>
 </section>

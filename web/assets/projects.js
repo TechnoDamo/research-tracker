@@ -12,7 +12,12 @@ for (const panel of document.querySelectorAll('[data-report-url]')) {
       const documentFromReport = new DOMParser().parseFromString(await response.text(), 'text/html');
       const article = documentFromReport.querySelector('article.document');
       if (!article) throw new Error('Report content was not found');
-      body.replaceChildren(...Array.from(article.childNodes).map(node => document.importNode(node, true)));
+      const sessionLinks = documentFromReport.querySelector('.session-links');
+      const nodes = [];
+      if (sessionLinks) nodes.push(document.importNode(sessionLinks, true));
+      nodes.push(...Array.from(article.childNodes).map(node => document.importNode(node, true)));
+      body.replaceChildren(...nodes);
+      window.researchTrackerExternalLinks(body);
       panel.dataset.loaded = 'true';
     } catch {
       body.textContent = 'The inline report could not be loaded. Use the link above to open it.';

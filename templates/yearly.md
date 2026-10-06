@@ -6,6 +6,7 @@ title: Annual Research Review — 2026
 period_start: 2026-01-01
 period_end: 2027-01-01
 generated_at: 2027-01-02T12:00:00Z
+session_files: []
 findings_count: 0
 ---
 
@@ -63,4 +64,4 @@ A short canonical reading list with one-line reasons.
 
 ## Coverage
 
-Link relevant monthly reviews and note gaps. Use session dates to determine calendar-year membership. If the year has no supported material development, keep only a short result and coverage statement; remove empty rankings, reading lists, themes, and placeholder timeline rows.
+Link relevant monthly reviews and note gaps. Use verified release/event dates for calendar-year developments, following the writing guide. In ongoing monitoring, label newly discovered older work separately as late discoveries in the observation period; never relabel it as a new release. Retrospective reviews include only releases/events inside the requested historical period. Populate `session_files` with the supporting sessions, and link them here. If the year has no supported material development, keep only a short result and coverage statement; remove empty rankings, reading lists, themes, and placeholder timeline rows.

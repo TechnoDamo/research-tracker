@@ -7,16 +7,22 @@ permalink: /sources/
 {% assign primary = site.data.sources.sources | where: "priority", "primary" %}
 {% assign secondary = site.data.sources.sources | where: "priority", "secondary" %}
 {% assign discovery = site.data.sources.sources | where: "priority", "discovery" %}
-<header class="page-heading">
-  <h1>Sources</h1>
-  <p>These are the sources routinely checked for research. Searches also follow relevant work beyond this list.</p>
-</header>
-<section class="source-section"><h2>Primary sources <span>{{ primary.size }}</span></h2>
-  {% for source in primary %}<a class="source-row" href="{{ source.url | escape }}" target="_blank" rel="noopener noreferrer"><span><strong>{{ source.name | escape }}</strong><small>{{ source.useful_for | escape }}</small></span><span aria-hidden="true">↗</span></a>{% endfor %}
+<section class="visual-banner subpage-banner sources-banner" aria-labelledby="sources-title">
+  <img class="paper-field" src="{{ '/web/assets/brand/flying-papers.png' | relative_url }}" alt="" aria-hidden="true">
+  <div class="banner-copy">
+    <h1 id="sources-title">Sources</h1>
+    <p>A minimum coverage checklist. Research searches also follow relevant work beyond this list.</p>
+  </div>
+  <img class="banner-logo" src="{{ '/web/assets/brand/research-tracker-logo.png' | relative_url }}" alt="" width="550" height="550">
 </section>
-<section class="source-section"><h2>Secondary sources <span>{{ secondary.size }}</span></h2>
-  {% for source in secondary %}<a class="source-row" href="{{ source.url | escape }}" target="_blank" rel="noopener noreferrer"><span><strong>{{ source.name | escape }}</strong><small>{{ source.useful_for | escape }}</small></span><span aria-hidden="true">↗</span></a>{% endfor %}
-</section>
-<section class="source-section"><h2>Discovery sources <span>{{ discovery.size }}</span></h2>
-  {% for source in discovery %}<a class="source-row" href="{{ source.url | escape }}" target="_blank" rel="noopener noreferrer"><span><strong>{{ source.name | escape }}</strong><small>{{ source.useful_for | escape }}</small></span><span aria-hidden="true">↗</span></a>{% endfor %}
-</section>
+<div class="source-list">
+  <section class="source-section"><h2>Primary sources</h2>
+    {% for source in primary %}<a class="source-row" href="{{ source.url | escape }}" target="_blank" rel="noopener noreferrer"><strong>{{ source.name | escape }}</strong><small>{{ source.useful_for | escape }}</small><span aria-hidden="true">↗</span></a>{% endfor %}
+  </section>
+  <section class="source-section"><h2>Secondary sources</h2>
+    {% for source in secondary %}<a class="source-row" href="{{ source.url | escape }}" target="_blank" rel="noopener noreferrer"><strong>{{ source.name | escape }}</strong><small>{{ source.useful_for | escape }}</small><span aria-hidden="true">↗</span></a>{% endfor %}
+  </section>
+  <section class="source-section"><h2>Discovery sources</h2>
+    {% for source in discovery %}<a class="source-row" href="{{ source.url | escape }}" target="_blank" rel="noopener noreferrer"><strong>{{ source.name | escape }}</strong><small>{{ source.useful_for | escape }}</small><span aria-hidden="true">↗</span></a>{% endfor %}
+  </section>
+</div>

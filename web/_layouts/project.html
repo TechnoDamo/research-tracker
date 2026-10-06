@@ -10,10 +10,15 @@ layout: default
 
 <div class="project-page">
   <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{ '/projects/' | relative_url }}">Projects</a><span aria-hidden="true">/</span><span>{{ page.title | escape }}</span></nav>
-  <header class="page-heading">
-    <h1>{{ page.title | escape }}</h1>
-    <p>{{ page.summary | escape }}</p>
-    <div class="project-actions"><a href="{{ '/findings/' | relative_url }}">Browse findings</a><a href="{{ '/archive/#sessions' | relative_url }}">Search sessions</a></div>
+  <header class="visual-banner project-banner">
+    <img class="paper-field" src="{{ '/web/assets/brand/flying-papers.png' | relative_url }}" alt="" aria-hidden="true">
+    <div class="banner-copy">
+      <h1>{{ page.title | escape }}</h1>
+      <p>{{ page.summary | escape }}</p>
+    </div>
+    <span class="project-hero-icon">
+      {% if page.icon %}<img src="{{ page.icon | relative_url }}" alt="" width="430" height="430">{% else %}<span class="blank-project-icon" aria-hidden="true"></span>{% endif %}
+    </span>
   </header>
 
   <section class="report-tree" aria-label="Reports by year and month">
@@ -22,11 +27,11 @@ layout: default
     {% assign year_children = year.items | where_exp: "report", "report.type != 'yearly'" %}
     {% assign months = year_children | group_by_exp: "report", "report.coverage_start | default: report.period_start | date: '%Y-%m'" %}
     <details class="tree-year"{% if forloop.first %} open{% endif %}>
-      <summary><span class="tree-label">{{ year.name }}</span><span class="tree-count">{{ months.size }} {% if months.size == 1 %}month{% else %}months{% endif %}</span></summary>
+      <summary><span class="tree-icon tree-icon-year" aria-hidden="true"></span><span class="tree-label">{{ year.name }}</span><span class="tree-count">{{ months.size }} {% if months.size == 1 %}month{% else %}months{% endif %}</span></summary>
       <div class="tree-children">
         {% if year_report %}
         <details class="report-panel" data-report-url="{{ year_report.url | relative_url }}">
-          <summary><span>Year review</span><span class="tree-count">{{ year_report.findings_count | default: 0 }} findings</span></summary>
+          <summary><span class="tree-icon tree-icon-report" aria-hidden="true"></span><span>Year review</span><span class="tree-count">{{ year_report.findings_count | default: 0 }} findings</span></summary>
           <div class="report-panel-content"><a class="open-report" href="{{ year_report.url | relative_url }}" target="_blank" rel="noopener noreferrer">Open full report in a new tab ↗</a><div class="report-body prose" data-report-body>Loading report…</div></div>
         </details>
         {% endif %}
@@ -35,17 +40,17 @@ layout: default
         {% assign weeks = month.items | where: "type", "weekly" | sort: "period_start" | reverse %}
         {% assign month_date = month.name | append: '-01' %}
         <details class="tree-month"{% if forloop.first %} open{% endif %}>
-          <summary><span class="tree-label">{{ month_date | date: '%B %Y' }}</span><span class="tree-count">{{ weeks.size }} {% if weeks.size == 1 %}week{% else %}weeks{% endif %}</span></summary>
+          <summary><span class="tree-icon tree-icon-month" aria-hidden="true"></span><span class="tree-label">{{ month_date | date: '%B %Y' }}</span><span class="tree-count">{{ weeks.size }} {% if weeks.size == 1 %}week{% else %}weeks{% endif %}</span></summary>
           <div class="tree-children">
             {% if month_report %}
             <details class="report-panel" data-report-url="{{ month_report.url | relative_url }}">
-              <summary><span>Month review</span><span class="tree-count">{{ month_report.findings_count | default: 0 }} findings</span></summary>
+              <summary><span class="tree-icon tree-icon-report" aria-hidden="true"></span><span>Month review</span><span class="tree-count">{{ month_report.findings_count | default: 0 }} findings</span></summary>
               <div class="report-panel-content"><a class="open-report" href="{{ month_report.url | relative_url }}" target="_blank" rel="noopener noreferrer">Open full report in a new tab ↗</a><div class="report-body prose" data-report-body>Loading report…</div></div>
             </details>
             {% endif %}
             {% for week in weeks %}
             <details class="report-panel" data-report-url="{{ week.url | relative_url }}">
-              <summary><span>{{ week.title | remove: 'Weekly Research Review — ' | escape }}</span><span class="tree-count">{{ week.findings_count | default: 0 }} {% if week.findings_count == 1 %}finding{% else %}findings{% endif %}</span></summary>
+              <summary><span class="tree-icon tree-icon-week" aria-hidden="true"></span><span>{{ week.title | remove: 'Weekly Research Review — ' | escape }}</span><span class="tree-count">{{ week.findings_count | default: 0 }} {% if week.findings_count == 1 %}finding{% else %}findings{% endif %}</span></summary>
               <div class="report-panel-content"><a class="open-report" href="{{ week.url | relative_url }}" target="_blank" rel="noopener noreferrer">Open full report in a new tab ↗</a><div class="report-body prose" data-report-body>Loading report…</div></div>
             </details>
             {% endfor %}

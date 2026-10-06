@@ -6,6 +6,7 @@ title: Monthly Research Review — 2026-10
 period_start: 2026-10-01
 period_end: 2026-11-01
 generated_at: 2026-11-01T12:00:00Z
+session_files: []
 findings_count: 0
 ---
 
@@ -47,4 +48,4 @@ Prioritized canonical links with one-line reasons. Keep short.
 
 ## Coverage
 
-Link relevant weekly reports and note material gaps. Use session dates, not week labels, to determine calendar-month membership. If no item qualifies, keep only a short result and coverage statement; remove unused rankings, reading lists, themes, and placeholder table rows.
+Link relevant weekly reports and note material gaps. Use verified release/event dates for calendar-month developments, following the writing guide. In ongoing monitoring, label newly discovered older work separately as late discoveries in the observation period; never relabel it as a new release. Retrospective reviews include only releases/events inside the requested historical period. Populate `session_files` with the supporting sessions, and link them here. If no item qualifies, keep only a short result and coverage statement; remove unused rankings, reading lists, themes, and placeholder table rows.
