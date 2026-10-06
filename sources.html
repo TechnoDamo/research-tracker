@@ -1,0 +1,25 @@
+---
+layout: default
+title: Sources
+nav: sources
+permalink: /sources/
+---
+{% assign primary = site.data.sources.sources | where: "priority", "primary" %}
+{% assign secondary = site.data.sources.sources | where: "priority", "secondary" %}
+{% assign discovery = site.data.sources.sources | where: "priority", "discovery" %}
+
+<header class="page-hero"><p class="eyebrow"><span class="eyebrow-dot"></span> COVERAGE MAP</p><h1>Research sources<span class="accent-period">.</span></h1><p>These sources set a reliable starting point for each scan. Relevant work outside the registry belongs in the archive too.</p></header>
+
+<div class="source-intro"><span class="source-intro-icon" aria-hidden="true">↗</span><p><strong>Coverage floor, not a boundary.</strong> Search sessions also record new labs, reports, citations, and project pages found elsewhere. Original sources are checked before claims are assessed.</p></div>
+
+<section class="source-section"><div class="section-heading"><div><p class="section-kicker">01 / REQUIRED COVERAGE</p><h2>Primary sources</h2></div><span class="count-label">{{ primary.size }} sources</span></div><div class="source-list">
+{% for source in primary %}<a class="source-row" href="{{ source.url | escape }}" target="_blank" rel="noopener noreferrer"><span class="source-number">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><span class="source-main"><strong>{{ source.name | escape }}</strong><small>{{ source.useful_for | escape }}</small></span><span class="source-type">{{ source.type | replace: '_', ' ' | escape }}</span><span class="row-arrow" aria-hidden="true">↗</span></a>{% endfor %}
+</div></section>
+
+<section class="source-section"><div class="section-heading"><div><p class="section-kicker">02 / WHEN RELEVANT</p><h2>Secondary sources</h2></div><span class="count-label">{{ secondary.size }} sources</span></div><div class="source-list">
+{% for source in secondary %}<a class="source-row" href="{{ source.url | escape }}" target="_blank" rel="noopener noreferrer"><span class="source-number">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><span class="source-main"><strong>{{ source.name | escape }}</strong><small>{{ source.useful_for | escape }}</small></span><span class="source-type">{{ source.type | replace: '_', ' ' | escape }}</span><span class="row-arrow" aria-hidden="true">↗</span></a>{% endfor %}
+</div></section>
+
+<section class="source-section"><div class="section-heading"><div><p class="section-kicker">03 / EXPLORE FURTHER</p><h2>Discovery routes</h2></div><span class="count-label">{{ discovery.size }} sources</span></div><div class="source-list">
+{% for source in discovery %}<a class="source-row" href="{{ source.url | escape }}" target="_blank" rel="noopener noreferrer"><span class="source-number">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><span class="source-main"><strong>{{ source.name | escape }}</strong><small>{{ source.useful_for | escape }}</small></span><span class="source-type">{{ source.type | replace: '_', ' ' | escape }}</span><span class="row-arrow" aria-hidden="true">↗</span></a>{% endfor %}
+</div></section>

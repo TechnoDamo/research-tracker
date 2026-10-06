@@ -2,6 +2,7 @@
 schema_version: 1
 topic: zero-order-training
 type: weekly
+title: Weekly Research Review — 2026-W41
 period_start: 2026-10-05
 period_end: 2026-10-12
 generated_at: 2026-10-12T12:00:00Z

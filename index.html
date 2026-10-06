@@ -1,0 +1,70 @@
+---
+layout: default
+title: Overview
+nav: home
+permalink: /
+---
+{% assign topics = site.pages | where: "type", "topic" | sort: "title" %}
+{% assign latest_weekly = site.pages | where: "type", "weekly" | sort: "period_start" | reverse | first %}
+{% assign latest_monthly = site.pages | where: "type", "monthly" | sort: "period_start" | reverse | first %}
+{% assign latest_yearly = site.pages | where: "type", "yearly" | sort: "period_start" | reverse | first %}
+{% assign primary_sources = site.data.sources.sources | where: "priority", "primary" %}
+
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="eyebrow-dot"></span> Research intelligence, kept simple</p>
+    <h1>Follow the work.<br><em>Keep the signal.</em></h1>
+    <p class="hero-description">A careful record of new research, changing evidence, and what deserves attention. Every assessment points back to original work.</p>
+    <div class="hero-actions">
+      <a class="button button-dark" href="{{ '/archive/' | relative_url }}">Explore archive <span aria-hidden="true">↗</span></a>
+      <a class="text-link" href="{{ '/sources/' | relative_url }}">View source coverage <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+  <div class="hero-aside" aria-label="Archive principles">
+    <div class="aside-topline"><span>THE METHOD</span><span>01 / 03</span></div>
+    <div class="aside-rule"><span class="aside-number">01</span><span>Search broadly</span><span class="aside-arrow">↗</span></div>
+    <div class="aside-rule"><span class="aside-number">02</span><span>Assess evidence</span><span class="aside-arrow">↗</span></div>
+    <div class="aside-rule"><span class="aside-number">03</span><span>Synthesize change</span><span class="aside-arrow">↗</span></div>
+    <p>Sources set a coverage floor. The search remains open to relevant work wherever it appears.</p>
+  </div>
+</section>
+
+<section class="metrics" aria-label="Archive at a glance">
+  <div class="metric"><span class="metric-value">{{ topics.size }}</span><span class="metric-label">Tracked {% if topics.size == 1 %}topic{% else %}topics{% endif %}</span></div>
+  <div class="metric"><span class="metric-value">{{ primary_sources.size }}</span><span class="metric-label">Primary sources</span></div>
+  <div class="metric"><span class="metric-value">{{ site.data.sources.sources.size }}</span><span class="metric-label">Registered sources</span></div>
+</section>
+
+<section class="section-block">
+  <div class="section-heading"><div><p class="section-kicker">CURRENT COVERAGE</p><h2>Research topics</h2></div><span class="section-note">Focused scopes, open discovery</span></div>
+  <div class="topic-grid">
+    {% for topic in topics %}
+    <a class="topic-card" href="{{ topic.url | relative_url }}">
+      <span class="card-top"><span class="topic-index">0{{ forloop.index }}</span><span class="status-pill"><span></span>{{ topic.status | default: 'active' }}</span></span>
+      <span class="topic-card-title">{{ topic.title | escape }}</span>
+      <span class="topic-card-description">{{ topic.summary | default: 'Explore the scope, criteria, and research question for this topic.' | escape }}</span>
+      <span class="card-bottom">Explore topic <span aria-hidden="true">↗</span></span>
+    </a>
+    {% else %}
+    <p class="empty-note">No topics have been added yet.</p>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-block latest-block">
+  <div class="section-heading"><div><p class="section-kicker">RECENT OUTPUT</p><h2>Latest reviews</h2></div><a class="section-link" href="{{ '/archive/' | relative_url }}">All reports <span aria-hidden="true">→</span></a></div>
+  <div class="review-list">
+    {% if latest_weekly %}
+    <a class="review-row" href="{{ latest_weekly.url | relative_url }}"><span class="review-type">WEEKLY</span><span class="review-title">{{ latest_weekly.title | default: latest_weekly.name | escape }}</span><span class="review-date">{{ latest_weekly.period_start | date: '%d %b %Y' }}</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+    {% endif %}
+    {% if latest_monthly %}
+    <a class="review-row" href="{{ latest_monthly.url | relative_url }}"><span class="review-type">MONTHLY</span><span class="review-title">{{ latest_monthly.title | default: latest_monthly.name | escape }}</span><span class="review-date">{{ latest_monthly.period_start | date: '%b %Y' }}</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+    {% endif %}
+    {% if latest_yearly %}
+    <a class="review-row" href="{{ latest_yearly.url | relative_url }}"><span class="review-type">YEARLY</span><span class="review-title">{{ latest_yearly.title | default: latest_yearly.name | escape }}</span><span class="review-date">{{ latest_yearly.period_start | date: '%Y' }}</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+    {% endif %}
+    {% unless latest_weekly or latest_monthly or latest_yearly %}
+    <div class="empty-state"><span class="empty-symbol" aria-hidden="true">↗</span><div><strong>The archive is ready.</strong><p>Reviews will appear here after the first documented search session and assessment.</p></div></div>
+    {% endunless %}
+  </div>
+</section>

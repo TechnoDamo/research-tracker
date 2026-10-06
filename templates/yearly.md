@@ -2,6 +2,7 @@
 schema_version: 1
 topic: zero-order-training
 type: yearly
+title: Annual Research Review — 2026
 period_start: 2026-01-01
 period_end: 2027-01-01
 generated_at: 2027-01-02T12:00:00Z

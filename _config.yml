@@ -1,0 +1,17 @@
+title: Research Tracker
+description: A concise, source-grounded archive of research developments.
+url: ""
+baseurl: "/research-tracker"
+markdown: kramdown
+permalink: pretty
+exclude:
+  - README.md
+  - AGENTS.md
+  - docs
+  - templates
+defaults:
+  - scope:
+      path: "topics"
+      type: pages
+    values:
+      layout: default

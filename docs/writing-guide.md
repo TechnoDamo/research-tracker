@@ -6,13 +6,13 @@ This guide defines the archive contract. Keep prose readable, metadata small, an
 
 The registry is a **minimum coverage checklist, not an exhaustive source list or search boundary**. A full scan checks each applicable primary source, uses secondary sources when relevant, and deliberately searches outside the registry. Search broader scholarly and general web indexes; follow citations, new terms, lab and institutional pages, project sites, and official code releases. Apply the topic's inclusion rules regardless of where an item was found. Follow discovery hits to original material before assessing a claim.
 
-A targeted follow-up can inspect a smaller set of sources; state its exact question and scope. In either kind of session, record every checked source, including unregistered URLs. A newly discovered source can remain in the session record; add it to `sources.yaml` only when recurring monitoring would add value. The registry should remain useful without pretending to enumerate the whole research landscape.
+A targeted follow-up can inspect a smaller set of sources; state its exact question and scope. In either kind of session, record every checked source, including unregistered URLs. A newly discovered source can remain in the session record; add it to `_data/sources.yml` only when recurring monitoring would add value. The registry should remain useful without pretending to enumerate the whole research landscape.
 
 ## Files and names
 
 | File | Path and name | Purpose |
 | --- | --- | --- |
-| Source registry | `sources.yaml` | Shared minimum coverage checklist; research may go beyond it. |
+| Source registry | `_data/sources.yml` | Shared minimum coverage checklist; research may go beyond it. |
 | Topic | `topics/<topic-id>/topic.md` | Scope, vocabulary, relevance rules. |
 | Search session | `topics/<topic-id>/sessions/YYYY-MM-DDTHHMMSSZ.md` | One record for every distinct search session. Timestamp is the session start in UTC; seconds prevent collisions. |
 | Weekly | `topics/<topic-id>/reports/weekly/YYYY-Www.md` | ISO 8601 week, Monday through Sunday. |
@@ -31,7 +31,7 @@ If a scan spans midnight, name the session for its UTC start and state its actua
 
 ## Source registry
 
-`sources.yaml` is the single canonical registry. Each entry has:
+`_data/sources.yml` is the single canonical registry. Each entry has:
 
 | Field | Meaning |
 | --- | --- |
@@ -59,7 +59,7 @@ Cross-report references should use the finding ID and a relative Markdown link t
 
 ## Weekly reports
 
-Use `templates/weekly.md`. Frontmatter includes `topic`, `type`, inclusive `period_start`, exclusive `period_end`, `generated_at`, `session_files` (relative paths from the report), `findings_count`, and high/medium/low counts. Counts are unique assessed findings in that report; they must match the cards. `session_files` can be empty only if the report explicitly says coverage was absent. A week without meaningful work says so and identifies the coverage limits.
+Use `templates/weekly.md`. Frontmatter includes `title`, `topic`, `type`, inclusive `period_start`, exclusive `period_end`, `generated_at`, `session_files` (relative paths from the report), `findings_count`, and high/medium/low counts. Counts are unique assessed findings in that report; they must match the cards. `session_files` can be empty only if the report explicitly says coverage was absent. A week without meaningful work says so and identifies the coverage limits.
 
 Keep the executive summary to about three to five bullets. Put cards under High, Medium, or Low according to **relevance**; rank within each section by importance. For every card include all template fields. `Authors` should reflect the original record. Use `Unknown` when a date or author cannot be verified, and explain consequential uncertainty. Contribution is one or two sentences; `Why it matters` is separate. Cite the original source for the result and describe the actual experimental or theoretical support. Do not treat an abstract, acceptance label, code link, or press summary as proof of a performance claim.
 
@@ -87,11 +87,13 @@ For monthly and yearly metadata, `findings_count` is the number of distinct find
 
 ## Adding another topic
 
-1. Choose a stable kebab-case topic ID and create `topics/<id>/topic.md` with the same frontmatter and scope sections as the ZO topic.
-2. Add the topic ID to applicable entries in `sources.yaml`; add new sources only when they provide distinct coverage.
+1. Choose a stable kebab-case topic ID and create `topics/<id>/topic.md` with the same frontmatter and scope sections as the ZO topic. Set `type: topic`, a short `summary`, and `permalink: /topics/<id>/` so the site can list and link it.
+2. Add the topic ID to applicable entries in `_data/sources.yml`; add new sources only when they provide distinct coverage.
 3. Create its session and report directories and copy the templates, replacing the topic ID and dates.
 4. Keep topic-specific search vocabulary and inclusion rules in the topic file. Keep shared source facts in the source registry.
 
-## Future static site
+## Static GitHub Pages site
 
-A GitHub Pages build can enumerate `topics/*/topic.md`, load `sources.yaml`, and parse report and session frontmatter. Report type, period, counts, and topic ID support latest-report and archive views. The consistent finding heading and field labels support simple extraction for filtered lists; finding IDs support links across periods. Markdown bodies remain readable without a site. A future site can be static, responsive, and light on JavaScript; this repository does not yet include site code.
+The Jekyll site enumerates `topics/*/topic.md` and report/session pages with frontmatter, and reads the canonical `_data/sources.yml`. Report type, period, counts, and topic ID drive latest-review and archive views. `title` supplies the browser and archive label; keep it aligned with the document heading. Add new reports as Markdown files in the documented directories and they will appear without editing HTML. Markdown bodies remain readable in Git.
+
+The consistent finding heading and field labels leave room for later finding-level lists or filters. The current site intentionally has no per-finding index or JavaScript. `_config.yml` sets the GitHub Pages project path; adjust `baseurl` if the repository is renamed. Publishing is a separate step from writing the archive.

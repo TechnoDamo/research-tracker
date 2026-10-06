@@ -1,8 +1,12 @@
 ---
 schema_version: 1
 id: zero-order-training
+type: topic
+title: Zero-order training and pretraining
 name: Zero-order training and pretraining
+summary: Gradient-free and backpropagation-free training of neural networks and foundation models.
 status: active
+permalink: /topics/zero-order-training/
 ---
 
 # Zero-order training and pretraining
@@ -37,7 +41,7 @@ Core terms: zeroth-order optimization, zero-order optimization, ZO training, ZO 
 
 Synonyms and variants: no-backprop training, training without backpropagation, perturbation-based learning, evolution strategies for neural network training, black-box gradient estimation. Combine broad terms with `neural network`, `transformer`, `language model`, `pretraining`, or `fine-tuning` to control noise.
 
-These terms are starting points, not an exhaustive query list. Follow citations, new terminology, and relevant work found outside `sources.yaml`; apply the inclusion and relevance rules above to every candidate.
+These terms are starting points, not an exhaustive query list. Follow citations, new terminology, and relevant work found outside `_data/sources.yml`; apply the inclusion and relevance rules above to every candidate.
 
 Adjacent topics: local learning rules, feedback alignment, synthetic gradients, evolution strategies, low-memory training, forward-mode automatic differentiation, hardware-constrained training, and biologically motivated learning. Include adjacent work only when it informs the core research question.
 

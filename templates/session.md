@@ -2,6 +2,7 @@
 schema_version: 1
 topic: zero-order-training
 type: session
+title: Search Session — 2026-10-06 12:00 UTC
 searched_at: 2026-10-06T12:00:00Z
 search_scope: targeted
 status: complete

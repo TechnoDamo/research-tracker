@@ -2,6 +2,7 @@
 schema_version: 1
 topic: zero-order-training
 type: monthly
+title: Monthly Research Review — 2026-10
 period_start: 2026-10-01
 period_end: 2026-11-01
 generated_at: 2026-11-01T12:00:00Z
