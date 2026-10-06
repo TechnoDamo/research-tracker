@@ -5,7 +5,7 @@
 Research Tracker is an archive for research topics.<br>
 Each week, an AI agent searches for meaningful new work and saves it in a concise, structured record: links to original sources, short assessments grouped by relevance and ranked by importance, and monthly and yearly reviews of what changed.<br>
 
-[Website (placeholder; not live yet)](https://your-username.github.io/research-tracker/)
+[Website](https://technodamo.github.io/research-tracker/)
 
 ## How it works
 
