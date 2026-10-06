@@ -17,6 +17,7 @@
         </a>
         <nav class="main-nav" aria-label="Main navigation">
           <a href="{{ '/' | relative_url }}"{% if page.nav == 'home' %} aria-current="page"{% endif %}>Overview</a>
+          <a href="{{ '/findings/' | relative_url }}"{% if page.nav == 'findings' %} aria-current="page"{% endif %}>Findings</a>
           <a href="{{ '/archive/' | relative_url }}"{% if page.nav == 'archive' %} aria-current="page"{% endif %}>Archive</a>
           <a href="{{ '/sources/' | relative_url }}"{% if page.nav == 'sources' %} aria-current="page"{% endif %}>Sources</a>
         </nav>

@@ -11,6 +11,7 @@ findings_count: 0
 high_priority_count: 0
 medium_priority_count: 0
 low_priority_count: 0
+findings: []
 ---
 
 # Weekly Research Review — 2026-W41
@@ -53,4 +54,4 @@ No meaningful findings. Use the same finding card format if needed.
 
 ## Coverage and follow-up
 
-Link the session files used, note missing sources, and list any claims needing closer reading. Remove the example finding card before publishing. If no item qualifies, replace the summary and priority sections with a short `## Result` stating that no qualifying findings were identified, plus this coverage section. Never retain an item just to fill the report.
+Link the session files used, note missing sources, and list any claims needing closer reading. For each retained card, add its `id`, verified `released_on` date, and short `title` to the frontmatter `findings` list and put `<span id="finding-id"></span>` inside its heading before the title. The website uses these to link directly to the assessment. Remove the example finding card before publishing. If no item qualifies, replace the summary and priority sections with a short `## Result` stating that no qualifying findings were identified, plus this coverage section. Never retain an item just to fill the report.

@@ -98,6 +98,8 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .archive-row { display: grid; grid-template-columns: 130px 1fr 20px; gap: 24px; align-items: center; padding: 19px 0; border-top: 1px solid var(--line); }
 .archive-row:last-of-type { border-bottom: 1px solid var(--line); }
 .archive-row:hover .archive-main strong, .review-row:hover .review-title, .source-row:hover strong { color: var(--accent); }
+.finding-section { padding-bottom: 95px; }
+.finding-row .archive-main small { text-transform: none; }
 .archive-date { color: var(--muted); font-size: 11px; }
 .archive-main { display: flex; flex-direction: column; gap: 6px; }
 .archive-main strong { font-size: 13px; font-weight: 650; transition: color .2s ease; }
@@ -152,7 +154,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
   .site-header { min-height: 70px; align-items: center; }
   .brand { gap: 8px; font-size: 12px; }
   .brand-mark { width: 30px; height: 30px; font-size: 17px; }
-  .main-nav { gap: 13px; }
+  .main-nav { gap: 10px; }
   .main-nav a { font-size: 10px; }
   .main-nav a[aria-current="page"]::after { bottom: -26px; }
   .hero { padding-top: 64px; }
