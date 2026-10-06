@@ -17,7 +17,7 @@ The [source registry](web/_data/sources.yml) is a minimum checklist, **not a lim
 
 ## Inside the repository
 
-- **Topics** define each research question and its inclusion rules.
+- **Projects** define each research question and its inclusion rules.
 - **Sessions** record every search, including quiet ones.
 - **Reports** assess weekly findings and synthesize monthly and yearly changes.
 - **Sources and templates** keep coverage and writing consistent.

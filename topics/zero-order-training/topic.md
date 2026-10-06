@@ -2,11 +2,12 @@
 schema_version: 1
 id: zero-order-training
 type: topic
+layout: project
 title: Zero-order training and pretraining
 name: Zero-order training and pretraining
 summary: Gradient-free and backpropagation-free training of neural networks and foundation models.
 status: active
-permalink: /topics/zero-order-training/
+permalink: /projects/zero-order-training/
 ---
 
 # Zero-order training and pretraining

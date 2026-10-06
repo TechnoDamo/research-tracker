@@ -1,0 +1,21 @@
+---
+layout: default
+title: Projects
+nav: projects
+permalink: /projects/
+---
+{% assign projects = site.pages | where: "type", "topic" | sort: "title" %}
+<header class="page-heading">
+  <h1>Projects</h1>
+  <p>Each project has its own scope, search sessions, and reports.</p>
+</header>
+<section class="project-list" aria-label="Research projects">
+  {% for project in projects %}
+  <a class="project-list-row" href="{{ project.url | relative_url }}">
+    <span><strong>{{ project.title | escape }}</strong><small>{{ project.summary | escape }}</small></span>
+    <span aria-hidden="true">↗</span>
+  </a>
+  {% else %}
+  <p>No projects have been added yet.</p>
+  {% endfor %}
+</section>

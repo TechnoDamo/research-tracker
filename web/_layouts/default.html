@@ -1,47 +1,32 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f6f5f1">
-    <meta name="description" content="{{ site.description | escape }}">
-    <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
-    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
-  </head>
-  <body>
-    <div class="site-shell">
-      <header class="site-header">
-        <a class="brand" href="{{ '/' | relative_url }}" aria-label="Research Tracker home">
-          <span class="brand-mark" aria-hidden="true">R<span class="brand-slash">/</span></span>
-          <span class="brand-name">Research Tracker</span>
-        </a>
-        <nav class="main-nav" aria-label="Main navigation">
-          <a href="{{ '/' | relative_url }}"{% if page.nav == 'home' %} aria-current="page"{% endif %}>Overview</a>
-          <a href="{{ '/findings/' | relative_url }}"{% if page.nav == 'findings' %} aria-current="page"{% endif %}>Findings</a>
-          <a href="{{ '/archive/' | relative_url }}"{% if page.nav == 'archive' %} aria-current="page"{% endif %}>Archive</a>
-          <a href="{{ '/sources/' | relative_url }}"{% if page.nav == 'sources' %} aria-current="page"{% endif %}>Sources</a>
-        </nav>
-      </header>
-
-      <main id="main-content" class="site-main">
-        {% if page.type == 'topic' or page.type == 'weekly' or page.type == 'monthly' or page.type == 'yearly' or page.type == 'session' %}
-          <div class="document-topline">
-            <a href="{{ '/' | relative_url }}">Overview</a>
-            <span aria-hidden="true">/</span>
-            {% if page.type == 'topic' %}<span>Topic</span>{% else %}<a href="{{ '/archive/' | relative_url }}">Archive</a><span aria-hidden="true">/</span><span>{{ page.type | capitalize }}</span>{% endif %}
-          </div>
-          <article class="document prose">
-            {{ content }}
-          </article>
-        {% else %}
-          {{ content }}
-        {% endif %}
-      </main>
-
-      <footer class="site-footer">
-        <span>Research Tracker <span class="footer-separator">/</span> Open research record</span>
-        <span>Markdown first. Evidence led.</span>
-      </footer>
-    </div>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.description | escape }}">
+  <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="{{ '/' | relative_url }}">Research Tracker</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="{{ '/' | relative_url }}"{% if page.nav == 'home' %} aria-current="page"{% endif %}>Overview</a>
+        <a href="{{ '/projects/' | relative_url }}"{% if page.nav == 'projects' or page.type == 'topic' %} aria-current="page"{% endif %}>Projects</a>
+        <a href="{{ '/sources/' | relative_url }}"{% if page.nav == 'sources' %} aria-current="page"{% endif %}>Sources</a>
+      </nav>
+    </header>
+    <main id="main-content">
+      {% if page.type == 'weekly' or page.type == 'monthly' or page.type == 'yearly' or page.type == 'session' %}
+        {% assign project_path = page.topic | prepend: '/projects/' | append: '/' %}
+        <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{ '/projects/' | relative_url }}">Projects</a><span aria-hidden="true">/</span><a href="{{ project_path | relative_url }}">{{ page.topic | replace: '-', ' ' | capitalize | escape }}</a><span aria-hidden="true">/</span><span>{{ page.type | capitalize }}</span></nav>
+        <article class="document prose">{{ content }}</article>
+      {% else %}
+        {{ content }}
+      {% endif %}
+    </main>
+    <footer class="site-footer">Research Tracker</footer>
+  </div>
+</body>
 </html>

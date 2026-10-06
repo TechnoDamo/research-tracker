@@ -2,6 +2,7 @@ title: Research Tracker
 description: A concise, source-grounded archive of research developments.
 url: ""
 baseurl: "/research-tracker"
+github_url: "https://github.com/your-username/research-tracker"
 markdown: kramdown
 permalink: pretty
 layouts_dir: web/_layouts
