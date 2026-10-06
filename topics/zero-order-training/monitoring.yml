@@ -1,21 +1,21 @@
 schema_version: 1
 topic: zero-order-training
-status: needs_setup
-monitor_from: null
+status: active
+monitor_from: 2026-10-07
 backfill_start: null
 backfill_end: null
-weekday: null
-local_time: null
-timezone: null
+weekday: monday
+local_time: "08:00"
+timezone: Europe/Amsterdam
 scheduler:
-  provider: null
-  task_id: null
+  provider: chatgpt
+  task_id: "6ac56796b3608191859edd5b67d84492"
 persistence:
-  mode: null # local, commit, push, or pull_request; agree with the human
-  remote: null
-  branch: null
+  mode: push
+  remote: origin
+  branch: main
 language: en
 detail: concise
 overlap_days: 7
 last_completed_end: null
-# Existing September material is a retrospective example, not an active weekly schedule.
+# Existing September material is retrospective context; ongoing weekly monitoring begins from monitor_from.
