@@ -54,7 +54,3 @@ Adjacent topics: local learning rules, feedback alignment, synthetic gradients, 
 ## Eligible release types
 
 arXiv preprints, OpenReview submissions, accepted conference papers, journal papers, technical reports, lab and institutional research pages, and substantial code or project releases. Publication type and evidence maturity must be stated separately.
-
-## Example of in-scope work
-
-[Q Labs — Dust: Pretraining Transformers Without Backpropagation](https://qlabs.sh/research/dust) is an example you identified of research published on a lab page. Lab research pages are eligible for tracking even without a conference or journal version. This link is a scope example; a search session and report would assess the work and its evidence.

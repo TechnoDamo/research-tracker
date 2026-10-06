@@ -21,6 +21,8 @@ _layouts/, assets/, _config.yml       GitHub Pages layout and styling
 
 Start with [the agent workflow](AGENTS.md), [the ZO topic](topics/zero-order-training/topic.md), [the source registry](_data/sources.yml), and [the writing guide](docs/writing-guide.md).
 
+For a worked example, read the [September 2026 monthly review](topics/zero-order-training/reports/monthly/2026-09.md), its five linked weekly reports, and the [retrospective search session](topics/zero-order-training/sessions/2026-10-06T141730Z.md). The example is explicitly marked as a targeted, partial backfill.
+
 ## Working sequence
 
 1. Read the topic scope and source registry. The registry is a minimum coverage checklist, **not a boundary on search**. Check relevant listed sources and actively discover work elsewhere using broader search, citations, lab pages, and new terminology.

@@ -4,6 +4,8 @@ url: ""
 baseurl: "/research-tracker"
 markdown: kramdown
 permalink: pretty
+plugins:
+  - jekyll-relative-links
 exclude:
   - README.md
   - AGENTS.md
