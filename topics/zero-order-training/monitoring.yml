@@ -19,3 +19,4 @@ detail: concise
 overlap_days: 7
 last_completed_end: null
 # Existing September material is retrospective context; ongoing weekly monitoring begins from monitor_from.
+# The 2026-10-12 manual scan was persisted, but the checkpoint is intentionally retained because the documented local validation commands could not run in the current execution environment (container network/DNS blocked the repository checkout). The next run must requery from monitor_from, deduplicate the saved W41/W42 findings, validate, then advance the checkpoint only on success.
