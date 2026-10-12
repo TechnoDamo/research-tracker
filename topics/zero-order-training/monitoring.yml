@@ -6,10 +6,10 @@ backfill_start: null
 backfill_end: null
 weekday: monday
 local_time: "08:00"
-timezone: Europe/Amsterdam
+timezone: Europe/Berlin
 scheduler:
   provider: chatgpt
-  task_id: "6ac56796b3608191859edd5b67d84492"
+  task_id: "6accb74b92948191b61f11c1a76a03c4"
 persistence:
   mode: push
   remote: origin
