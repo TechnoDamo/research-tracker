@@ -19,4 +19,6 @@ detail: concise
 overlap_days: 7
 last_completed_end: null
 # Existing September material is retrospective context; ongoing weekly monitoring begins from monitor_from.
-# The 2026-10-12 manual scan was persisted, but the checkpoint is intentionally retained because the documented local validation commands could not run in the current execution environment (container network/DNS blocked the repository checkout). The next run must requery from monitor_from, deduplicate the saved W41/W42 findings, validate, then advance the checkpoint only on success.
+# The missed 2026-10-19 run was repaired manually on 2026-10-24 and W42 was closed.
+# Scheduler workaround: the external task now uses an explicit UTC VEVENT (07:00Z, equal to 08:00 Europe/Berlin on 2026-10-26) because two TZID-based task configurations remained enabled but never dispatched.
+# last_completed_end remains null because the documented local validation commands cannot run in the current execution environment: DNS resolution for github.com is blocked. Future runs must requery/deduplicate until validation can complete successfully.
