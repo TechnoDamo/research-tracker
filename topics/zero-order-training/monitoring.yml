@@ -21,4 +21,8 @@ last_completed_end: null
 # Existing September material is retrospective context; ongoing weekly monitoring begins from monitor_from.
 # The missed 2026-10-19 run was repaired manually on 2026-10-24 and W42 was closed.
 # Scheduler workaround: the external task now uses an explicit UTC VEVENT (07:00Z, equal to 08:00 Europe/Berlin on 2026-10-26) because two TZID-based task configurations remained enabled but never dispatched.
-# last_completed_end remains null because the documented local validation commands cannot run in the current execution environment: DNS resolution for github.com is blocked. Future runs must requery/deduplicate until validation can complete successfully.
+# The 2026-11-02 recurring scan saved a partial session, closed W43/W44 and created the October synthesis.
+# last_completed_end remains null: arXiv advanced search and OpenReview were not fully accessible,
+# and the required local Jekyll/validator/git-diff checks could not run (no clone due DNS, Bundler absent).
+# The next run must requery uncovered intervals with overlap and deduplicate existing IDs;
+# advance the checkpoint only after complete source coverage, validation, and persistence.
