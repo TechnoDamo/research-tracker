@@ -4,7 +4,7 @@ status: active
 monitor_from: 2026-10-07
 backfill_start: null
 backfill_end: null
-weekday: monday
+weekday: Monday
 local_time: "08:00"
 timezone: Europe/Berlin
 scheduler:
